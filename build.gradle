@@ -1,16 +1,20 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'application'
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.1'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
@@ -27,5 +31,12 @@ compileTestKotlin {
 }
 
 application {
+    //The JavaApplication.setMainClassName(String) method has been deprecated.
     mainClassName = 'MainKt'
+}
+
+shadowJar {
+    archiveBaseName.set('AmazonAffiMaker')
+    archiveClassifier.set('')
+    archiveVersion.set('')
 }

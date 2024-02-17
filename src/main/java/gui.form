@@ -50,7 +50,7 @@
         </constraints>
         <properties>
           <font name="Dialog" size="12" style="0"/>
-          <text value="Input ASIN"/>
+          <text value="ASINを入力"/>
         </properties>
       </component>
       <component id="80b14" class="javax.swing.JTextField" binding="asinField">
